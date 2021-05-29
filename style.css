@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400&display=swap');
+:root{
+    --dark-blue: #0f1a58;
+    --azul-bb: #B6C5F2;
+    --azul-ceu: #7193D9;
+    --azul-claro-claro: #0528F2;
+    --azul-claro-escuro: #0424D9;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 93.75; /* 15px */
+}
+
+body{
+    background-color: var(--azul-bb);
+    font-family: "poppins", sans-serif;
+}
+
+.container{
+    margin: auto;
+    width: min(90vw, 800px);
+}
+/* Titles ===============*/
+.sr-only {
+    position: absolute; 
+    padding: 0;
+    margin: -1px;
+    width: 1px;
+    height: 1px;
+    border-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    clip: rect(0,0,0,0);
+}
+
+h2{
+    margin-top: 3.2rem;
+    margin-bottom: 0.8rem;
+    color: var(--dark-blue);
+    font-weight: normal;
+}
+/* Header =============== */
+header{
+    background-color: #0A1C40;
+    padding: 3rem 0 10rem;
+    text-align: center;
+}
+
+h1#logo{
+    color: white;
+    font-weight: 100;
+}
+
+/* Balance ===============*/
+#balance{
+    margin-top: -6rem;
+    margin-bottom: 2.5rem;
+}
+
+section#balance h2{
+    color: white;
+}
+/* Cards ===============*/
+.card{
+    background-color: white;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.2rem;
+    border-radius: 0.5rem;
+    color: var(--dark-blue);
+}
+.card h3{
+    font-weight: normal;
+    font-size: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card p{
+    font-size: 1.9rem;
+    line-height: 3rem;
+    margin-top: 0.9rem;
+}
+.card.total.income{
+    background-color: #49AA26;   
+    color: white;
+}
+.card.total.expense{
+    background-color: #e92929;   
+    color: white;
+}
+
+/* links and buttons */
+a{
+    text-decoration: none;
+    color: var(--azul-claro-escuro);   
+}
+
+a:hover {
+    color:var(--azul-ceu);
+}
+
+button{
+    border: 0;
+    border-radius: 0.2rem;
+    color: white;
+    background-color: #49AA26;
+    width: 100%;
+    height: 50px;
+    padding: 0;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #53c52a;
+}
+
+a.button.new{
+    display: inline-block;
+    margin-bottom: 0.8rem;
+}
+
+.button.cancel{
+    color:#e92929 ;
+    border-radius: 0.2rem; 
+    border: 2px #e92929 solid; 
+    opacity: 0.6;
+
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button.cancel:hover{
+    opacity: 1;
+}
+/* Modal ============ */
+.modal-overlay{
+    background-color: rgba(0,0,0,0.7);
+    
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 999;
+}
+
+.modal-overlay.active{
+    opacity: 1;
+    visibility: visible;
+} 
+
+
+.modal{
+    background-color: #F0F2f5;
+    padding: 2.4rem;
+    display: grid;
+    width: 90%;
+    max-width: 500px;
+
+    position: relative;
+    z-index: 1;
+}
+
+/* form ====== */
+#form{
+    max-width: 500px;
+}
+
+#form h2{
+    margin-top: 0;
+}
+
+input{
+    border: none;
+    border-radius: 0.2rem;
+
+    padding: 0.8rem;
+    width: 100%;
+}
+
+.input-group{
+    margin-top: 0.8rem;
+}
+
+.input-group .help {
+    opacity: 0.4;
+}
+
+.input-group.actions{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} 
+
+.input-group.actions .button, .input-group.actions button{
+    width: 48%;
+}
+/* Cards transações ========*/
+#transaction{
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+}
+
+#data-table{
+    width: 100%;
+    border-spacing: 0 0.5rem;
+    color:#75A3BF;
+}
+
+table thead tr th:first-child,
+table tbody tr td:first-child{
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+table thead tr th:last-child,
+table tbody tr td:last-child{
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+table thead th{
+    background-color: white;
+    font-weight: normal;
+    padding: 1rem 2rem;
+    text-align: left;
+}
+
+table tr{
+    opacity: 0.8;
+} 
+
+table tr:hover{
+    opacity: 1;
+}
+
+table tbody td{
+    background-color: white;
+    padding: 1rem 2rem;
+}
+
+td.description {
+    color: var(--dark-blue);
+}
+
+td.expenses{
+    color: #e92929;
+}
+td.income{
+    color: #4db627;
+}
+/* Footer ===============*/
+footer{
+    text-align: center;
+    padding: 4rem 0 2rem;
+    color: var(--dark-blue);
+}
+
+/* Responssive ============*/
+@media (min-width: 800px){
+    html{
+        font-size: 87.5%;
+    }
+
+    #balance{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
